@@ -1,0 +1,33 @@
+$padding: 1rem;
+
+:host {
+  display: block;
+  padding: $padding;
+}
+
+.notes {
+  margin-left: -1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  max-width: calc(100vw - #{$padding * 2});
+  max-height: calc(100vw - #{$padding * 2});
+  background-color: #fbec75;
+  text-decoration: none;
+  box-shadow: 0 0 8px #BBB;
+  padding: 1rem;
+  overflow: hidden;
+  color: black;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  &:hover {
+    box-shadow: 2px 2px 8px #BBB;
+    transform: translate(-2px, -2px);
+  }
+}

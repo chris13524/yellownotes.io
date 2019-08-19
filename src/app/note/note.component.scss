@@ -1,0 +1,16 @@
+.content {
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  padding: 1rem;
+  margin: 0;
+  overflow: auto;
+  resize: none;
+  background-color: #fbec75;
+}
+
+.saved {
+  position: fixed;
+  top: 0;
+  right: 1rem;
+}

@@ -1,0 +1,13 @@
+<div>
+  <button (click)="newNote()">
+    +
+  </button>
+</div>
+
+<div class="notes">
+  <a class="note"
+     [routerLink]="[note.id]"
+     *ngFor="let note of data.notes">
+    {{note.content}}
+  </a>
+</div>
