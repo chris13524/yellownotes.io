@@ -1,0 +1,17 @@
+{
+  "short_name": "YellowNotes",
+  "name": "YellowNotes",
+  "icons": [
+    {
+      "src": "/assets/pwa-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#fbec75",
+  "theme_color": "#fbec75",
+  "display": "standalone",
+
+  "start_url": "/",
+  "scope": "/"
+}
