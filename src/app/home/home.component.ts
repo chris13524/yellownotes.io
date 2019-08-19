@@ -16,16 +16,7 @@ export class HomeComponent implements OnInit {
   }
   
   data: NotesData;
-  
-  newNote(): void {
-    const id = uuidv4();
-    this.data.notes.push({
-      id: id,
-      content: ""
-    });
-    setNotes(this.data);
-    this.router.navigate([id]);
-  }
+  newNoteId = uuidv4();
 }
 
 export class Note {

@@ -1,14 +1,7 @@
 <textarea class="content"
+          placeholder="Type your note here..."
           [(ngModel)]="noteContent"
           (ngModelChange)="contentUpdated()"
-          *ngIf="noteContent != null; else noteNotFound">
-
+          #textarea>
 </textarea>
 
-<div class="saved">
-  Saved: {{saved}}
-</div>
-
-<ng-template #noteNotFound>
-  Note not found
-</ng-template>

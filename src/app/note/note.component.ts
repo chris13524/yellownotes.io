@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {getNotes, Note, NotesData, setNotes} from "../home/home.component";
 
@@ -24,14 +24,19 @@ export class NoteComponent implements OnInit {
         }
       }
     });
+    
+    this.textarea.nativeElement.focus();
   }
   
   id: string;
   data: NotesData;
   
-  noteContent: string | null = null;
+  noteContent = "";
   
   saved = true;
+  
+  @ViewChild("textarea", {static: true})
+  textarea: ElementRef;
   
   timeout: any;
   
@@ -39,13 +44,32 @@ export class NoteComponent implements OnInit {
     this.saved = false;
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
-      for (const note of this.data.notes) {
-        if (note.id == this.id) {
-          note.content = this.noteContent;
+      if (this.noteContent == "") {
+        // delete the note
+        for (const i in this.data.notes) {
+          if (this.data.notes[i].id == this.id) {
+            this.data.notes.splice(Number(i), 1);
+          }
+        }
+      } else {
+        // update the note
+        let found = false;
+        for (const note of this.data.notes) {
+          if (note.id == this.id) {
+            note.content = this.noteContent;
+            found = true;
+          }
+        }
+        if (!found) {
+          this.data.notes.push({
+            id: this.id,
+            content: this.noteContent
+          });
         }
       }
+      
       setNotes(this.data);
       this.saved = true;
-    }, 1000);
+    }, 200);
   }
 }
