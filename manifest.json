@@ -3,7 +3,7 @@
   "name": "YellowNotes",
   "icons": [
     {
-      "src": "/assets/pwa-icon.png",
+      "src": "/pwa-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }

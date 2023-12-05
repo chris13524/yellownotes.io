@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>YellowNotes</title>
-  <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#fbec75">
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="note.css">
+  <script src="base.js"></script>
+  <script src="note.js"></script>
 </head>
 <body>
-  <app-root>
-    <noscript>
-      This site requires JavaScript to work.
-    </noscript>
-  </app-root>
+
+<textarea class="content"
+  placeholder="Type your note here..."
+  id="content">
+</textarea>
+
 </body>
 </html>

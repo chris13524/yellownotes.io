@@ -1,9 +1,0 @@
-pages:
-  image: node:10
-  script:
-    - npm install
-    - npm run build -- --prod
-    - mv dist/yellownotes public
-  artifacts:
-    paths:
-      - public

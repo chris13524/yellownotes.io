@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1.4rem;
+}
+
+/* https://stackoverflow.com/a/55713739/3171100 */
+ul::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+ul > *:first-child{
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+li a {
+  display: block;
+  height: 100%;
+  padding: 1rem;
+
+  overflow: hidden;
+  background-color: #fff398;
+  text-decoration: none;
+  box-shadow: 0 0 8px #BBB;
+  color: black;
+  word-wrap: break-word;
+}
+
+li:hover a {
+  box-shadow: 2px 2px 8px #BBB;
+  transform: scale(1.015);
+}
+
+li:last-child a {
+  position: relative;
+  background-color: #fff9c6;
+  text-align: center;
+}
+
+li:last-child a div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  color: gray;
+  font-size: 0.7rem;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+}

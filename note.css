@@ -1,3 +1,7 @@
+:root {
+  overflow: hidden;
+}
+
 .content {
   width: 100vw;
   height: 100vh;
@@ -6,5 +10,5 @@
   margin: 0;
   overflow: auto;
   resize: none;
-  background-color: #fbec75;
+  background-color: #fff398;
 }
